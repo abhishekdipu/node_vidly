@@ -1,11 +1,11 @@
 const express = require("express");
 require("dotenv").config();
 const mongoose = require("mongoose");
-
 //importing routes
 const genres = require("./routes/genres");
 const home = require("./routes/home");
 const customers = require("./routes/customers");
+const movies = require("./routes/movies");
 const app = express();
 
 //mongodb connection
@@ -24,6 +24,7 @@ app.use(express.json()); //it'll read the req and if there is json object presen
 app.use("/api/genres", genres); //for any api call starts with '/api/courses' use courses (which is imported)
 app.use("/", home);
 app.use("/api/customers", customers);
+app.use("/api/movies", movies);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`listening at port ${port}...`));

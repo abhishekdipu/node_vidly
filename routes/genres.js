@@ -42,15 +42,19 @@ router.put("/:id", async (req, res) => {
   res.send(genre);
 });
 
+//delete
 router.delete("/:id", async (req, res) => {
   const genre = await Genre.findByIdAndRemove(req.params.id);
 
   if (!genre) {
     return res.status(404).send(`the genre with given id is not present`);
   }
+  genre = await genre.deleteOne({ _id: req.param.id }, { new: true });
+
   res.send(genre);
 });
 
+//get by id
 router.get("/:id", async (req, res) => {
   const genre = await Genre.findById(req.params.id);
   if (!genre) {
