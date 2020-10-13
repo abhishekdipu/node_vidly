@@ -1,0 +1,39 @@
+{"level":"error","message":"Could not get the genres","timestamp":"2020-10-13T21:47:37.242Z"}
+{"level":"error","message":"Could not get the genres","timestamp":"2020-10-13T21:47:38.445Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T21:54:36.571Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T21:55:17.871Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T21:55:53.320Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T21:56:34.791Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T21:56:57.834Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T21:57:34.125Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T21:57:43.095Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T21:59:57.799Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:01:42.780Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:02:13.555Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:03:22.966Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:05:13.870Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:05:41.453Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:06:15.527Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:06:51.655Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:08:57.345Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:09:22.829Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:09:24.515Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:10:10.834Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:10:37.775Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:11:31.681Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:13:16.863Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:13:19.558Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:13:32.171Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:14:15.609Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:14:47.936Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:15:23.464Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:15:24.844Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:16:25.617Z"}
+{"level":"info","message":"listening at port 8000...","timestamp":"2020-10-13T22:16:34.920Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:16:34.945Z"}
+{"level":"info","message":"listening at port 8000...","timestamp":"2020-10-13T22:20:00.431Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:20:00.450Z"}
+{"level":"info","message":"listening at port 8000...","timestamp":"2020-10-13T22:20:03.584Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:20:03.601Z"}
+{"level":"info","message":"listening at port 8000...","timestamp":"2020-10-13T22:20:50.052Z"}
+{"level":"info","message":"connected to mongodb...","timestamp":"2020-10-13T22:20:50.077Z"}

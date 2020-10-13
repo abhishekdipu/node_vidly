@@ -7,7 +7,6 @@ const bcrypt = require("bcrypt");
 const passwordComplexity = require("joi-password-complexity");
 const jwt = require("jsonwebtoken");
 const config = require("config");
-const auth = require("../middleware/auth");
 
 //create an user
 router.post("/", async (req, res) => {
@@ -16,6 +15,7 @@ router.post("/", async (req, res) => {
     res.status(400).send(error.details[0].message);
     return;
   }
+
   //validate password requirements
   const { passwordValError } = passwordComplexity(complexityOptions).validate(
     req.body.password
@@ -40,21 +40,11 @@ router.post("/", async (req, res) => {
 
   //get the auth token
   const token = user.generateAuthToken();
-
-  //return res body and token in res header
   res
-    .header("x-auth-token", token)
-    .send(_.pick(user, ["_id", "name", "email"]));
+    .header("x-auth-token", token) //to return in res header; key: x-auth-token, value : token
+    .send(_.pick(user, ["_id", "name", "email"])); //to return in res body
 
-  //prefix the header argument with 'x-'
-});
-
-//get the current user
-// this auth middleware is for authorization and not for authentication
-router.get("/me", auth, async (req, res) => {
-  const user = await User.findById(req.user._id) //req.user._id is coming from auth
-    .select("-password");
-  res.send(user);
+  //by convension prefix the header argument with 'x-'
 });
 
 module.exports = router;

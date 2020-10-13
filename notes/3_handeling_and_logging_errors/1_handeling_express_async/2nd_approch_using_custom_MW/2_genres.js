@@ -1,20 +1,25 @@
 const express = require("express");
 const router = express.Router();
 const { Genre, validate } = require("../models/genre");
-const auth = require("../middleware/auth"); // to authenticate user before post/put/delete
-const admin = require("../middleware/admin"); // to check authorization user before delete
+const auth = require("../middleware/auth");
+const admin = require("../middleware/admin");
+const asyncMiddleware = require("../middleware/asyncMiddleware"); // mw to handle express aync error
 
 //get all genres
-router.get("/", async (req, res) => {
-  const genres = await Genre.find().sort();
-  res.send(genres);
-});
+router.get(
+  "/",
+  asyncMiddleware(async (req, res, next) => {
+    const genres = await Genre.find().sort();
+    res.send(genres);
+  })
+);
 
 //post request
 router.post("/", auth, async (req, res) => {
   const { error } = validate(req.body);
   if (error) {
     res.status(400).send(error.details[0].message);
+    //res.status(400).send(error);
     return;
   }
 

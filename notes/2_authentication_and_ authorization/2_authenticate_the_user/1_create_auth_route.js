@@ -34,5 +34,5 @@ const validate = (requestBody) => {
 module.exports = router;
 
 /*
-jwt: json web token is aa long string that identifies a user
+jwt: json web token is a long string that identifies a user
 */

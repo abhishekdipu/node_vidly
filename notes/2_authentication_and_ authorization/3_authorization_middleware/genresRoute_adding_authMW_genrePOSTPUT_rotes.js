@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { Genre, validate } = require("../models/genre");
-const auth = require("../middleware/auth"); // to authenticate user before post/put/delete
-const admin = require("../middleware/admin"); // to check authorization user before delete
+const auth = require("../middleware/auth"); // to authenticate user before post/put
 
 //get all genres
 router.get("/", async (req, res) => {
@@ -45,7 +44,7 @@ router.put("/:id", auth, async (req, res) => {
 
 //delete
 //authenticate user and validate admin access
-router.delete("/:id", [auth, admin], async (req, res) => {
+router.delete("/:id", auth, async (req, res) => {
   const genre = await Genre.findByIdAndRemove(req.params.id);
 
   if (!genre) {
@@ -53,16 +52,6 @@ router.delete("/:id", [auth, admin], async (req, res) => {
   }
   // genre = await genre.deleteOne({ _id: req.param.id }, { new: true });
 
-  res.send(genre);
-});
-
-//get by id
-router.get("/:id", async (req, res) => {
-  const genre = await Genre.findById(req.params.id);
-  if (!genre) {
-    res.status(404).send(`the genre with given id is not present`);
-    return;
-  }
   res.send(genre);
 });
 

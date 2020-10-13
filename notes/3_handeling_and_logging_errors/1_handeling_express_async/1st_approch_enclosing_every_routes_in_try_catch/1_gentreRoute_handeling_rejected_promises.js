@@ -5,9 +5,14 @@ const auth = require("../middleware/auth"); // to authenticate user before post/
 const admin = require("../middleware/admin"); // to check authorization user before delete
 
 //get all genres
+//handeling probable error
 router.get("/", async (req, res) => {
-  const genres = await Genre.find().sort();
-  res.send(genres);
+  try {
+    const genres = await Genre.find().sort();
+    res.send(genres);
+  } catch (ex) {
+    res.status(500).send("something sent wrong");
+  }
 });
 
 //post request
@@ -15,6 +20,7 @@ router.post("/", auth, async (req, res) => {
   const { error } = validate(req.body);
   if (error) {
     res.status(400).send(error.details[0].message);
+    //res.status(400).send(error);
     return;
   }
 
