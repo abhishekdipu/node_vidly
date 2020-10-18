@@ -4,17 +4,23 @@
   "description": "app using express and mongo",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "start":"node index.js"
+  },
+  "engines": {
+    "node": "12.18.2"
   },
   "author": "Abhishek Kumar",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "compression": "^1.7.4",
     "config": "^3.3.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "fawn": "^2.1.5",
+    "helmet": "^4.1.1",
     "joi": "^17.2.1",
     "joi-objectid": "^3.0.1",
     "joi-password-complexity": "^4.2.0",
