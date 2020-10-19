@@ -39,12 +39,14 @@
     -> select mongo shell version (4.2)
     -> copy connection string and run in command line (mongo "mongodb+srv://vidlycluster.juxff.mongodb.net/test" --username vidly_user --password vidly123)
     -> to check dbs in command line : show dbs
+
     2.2 choose (Connect using mongoDB Compass)
     -> choose (i have mongoDB Compass)
     -> choose compass version (1.12 or later)
     -> copy the connection string and paste in MongoDB Compass (mongodb+srv://vidly_user:vidly123@vidlycluster.juxff.mongodb.net/test)
 
-    2.3 choose
-    ->mongodb+srv://vidly_user:vidly123@vidlycluster.juxff.mongodb.net/vidly?retryWrites=true&w=majority
-
-        mongodb://localhost/vidly
+    2.3 choose (Connect your application)
+    -> choose DRIVER (Node.js)
+    -> choose version (3.6 or later)
+    -> copy connection string and paste in your app (mongodb+srv://vidly_user:vidly123@vidlycluster.juxff.mongodb.net/vidly?retryWrites=true&w=majority)
+    NB: earlier it was -> mongodb://localhost/vidly
