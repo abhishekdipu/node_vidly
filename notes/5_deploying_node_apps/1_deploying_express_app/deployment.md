@@ -28,16 +28,41 @@
   - login to heroku with cli : in terminal-> heroku login
 
   - prepare app for heroku :
+
     - add start script in package.json , as heroku will start this app with npm start command
+
     ```js
     "scripts": {
     "start":"node index.js"
     }
     ```
+
     - add node version(in which your project is created) to package.json.
       - to see node version : in terminal -> node -v
+
     ```js
     "engines": {
     "node": "12.18.2"
     }
     ```
+
+    - create .gitignore file : put file/folder name which you want want to push on git
+
+    - in terminal:-> heroku create unique_name eg.
+      heroku create abhishekdipu-vidly
+      (unique_name is optional if not given then heroku will craete itself )
+
+      - git push heroku master
+
+      - set environment varibales in heroku:
+
+        1. set jwtPrivateKey
+           heroku config:set vidly_jwtPrivateKey=1234
+        2. set NODE_ENV to production to inhance performance
+           heroku config:set NODE_ENV=production
+
+        - NB: to see all env aribales set in heroku:
+          heroku config
+
+- important things about heroku cloud architecture
+  - by default heroku give us 1 server called dyno
