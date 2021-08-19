@@ -10,4 +10,4 @@
 1. in models/user : add 'isAdmin' property to userSchema.
 2. in models/user : add 'isAdmin' property to jwt payload.
 3. in middleware : add admin.js file: write MW to verify isAdmin.
-4. in rotes/genres : use isAdmin MW to protect delete operation.
+4. in rautes/genres : use isAdmin MW to protect delete operation.

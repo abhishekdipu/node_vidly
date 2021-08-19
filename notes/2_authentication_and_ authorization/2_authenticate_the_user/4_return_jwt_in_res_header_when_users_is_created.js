@@ -47,3 +47,9 @@ router.post("/", async (req, res) => {
 });
 
 module.exports = router;
+/**
+ * - it's not required to return jwt in header when user is created, as usually we send the conformation email to user,
+ *   and once email is verified then when he logs in we return jwt in response.
+ * - but in same case we may not need to validate email if app is for internal purpose, then in such case we can send jwt
+ *   in headers when user gets created.
+ */

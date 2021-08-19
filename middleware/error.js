@@ -13,5 +13,5 @@ module.exports = function (err, req, res, next) {
   debug
   silly
   */
-  res.status(500).send("something sent wrong");
+  res.status(500).send("something went wrong");
 };

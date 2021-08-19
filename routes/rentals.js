@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const { required } = require("joi");
 const router = express.Router();
 
 const { Rental, validate } = require("../models/rental");
@@ -38,14 +37,11 @@ router.post("/", async (req, res) => {
 
   //see if customer is present or not
   const customer = await Customer.findById(req.body.customerId);
-  if (!customer) {
-    return res.status(400).send("Invalid customer.");
-  }
+  if (!customer) return res.status(400).send("Invalid customer.");
+
   //see if movie is present or not
   const movie = await Movie.findById(req.body.movieId);
-  if (!movie) {
-    return res.status(400).send("Invalid movie.");
-  }
+  if (!movie) return res.status(400).send("Invalid movie.");
 
   //see if movie stock is there or not
   if (movie.numberInStock === 0)

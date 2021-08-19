@@ -21,7 +21,6 @@ router.get("/:id", async (req, res) => {
 });
 
 //create a movie
-
 router.post("/", async (req, res) => {
   const { error } = validate(req.body);
   if (error) {

@@ -3,6 +3,7 @@ const router = express.Router();
 const { Genre, validate } = require("../models/genre");
 const auth = require("../middleware/auth"); // to authenticate user before post/put/delete
 const admin = require("../middleware/admin"); // to check authorization user before delete
+const mongoose = require("mongoose");
 
 //get all genres
 router.get("/", async (req, res) => {
@@ -58,6 +59,8 @@ router.delete("/:id", [auth, admin], async (req, res) => {
 
 //get by id
 router.get("/:id", async (req, res) => {
+  if (!mongoose.Types.ObjectId.isValid(req.params.id))
+    return res.status(404).send("not valid id");
   const genre = await Genre.findById(req.params.id);
   if (!genre) {
     res.status(404).send(`the genre with given id is not present`);

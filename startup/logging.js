@@ -1,6 +1,6 @@
 require("express-async-errors"); // to handler express async errors
 const winston = require("winston"); //for logging error/info to file/console
-require("winston-mongodb"); //for logging error/info to mongodb
+//require("winston-mongodb"); //for logging error/info to mongodb
 
 module.exports = function () {
   //handeling node exception
@@ -17,8 +17,8 @@ module.exports = function () {
   //to log error message in file
   winston.add(winston.transports.File, { filename: "logfile.log" });
   //to log error in mongodb
-  winston.add(winston.transports.MongoDB, {
-    db: "mongodb://localhost/vidly",
-    level: "info",
-  });
+  // winston.add(winston.transports.MongoDB, {
+  //   db: "mongodb://localhost/vidly",
+  //   level: "info",
+  // });
 };

@@ -15,6 +15,6 @@ process.on("uncaughtException", (ex) => {
 ```
 
 - Explaination:
-  - process: process object is an even emitter (even emmiters are the objects that can emit or publish events)
+  - process: process object is an event emitter (event emmiters are the objects that can emit or publish events)
   - 'process.on': on is methods of process to subscrible to an event.
-  - process.on("uncaughtException") : uncaughtException is an standard node event, this even is raised when we have exception in node process and we have not handled that exception using catch block
+  - process.on("uncaughtException") : uncaughtException is an standard node event, this event is raised when we have exception in node process and we have not handled that exception using catch block

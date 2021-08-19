@@ -1,6 +1,5 @@
 //create post route for user
 const express = require("express");
-const mongoose = require("mongoose");
 const router = express.Router();
 const { User, validate } = require("../models/user");
 const _ = require("lodash");
@@ -8,14 +7,10 @@ const _ = require("lodash");
 //get all genres
 router.post("/", async (req, res) => {
   const { error } = validate(req.body);
-  if (error) {
-    res.status(400).send(error.details[0].message);
-    return;
-  }
+  if (error) return res.status(400).send(error.details[0].message);
+
   let user = await User.findOne({ email: req.body.email });
-  if (user) {
-    return res.status(400).send("user is already register");
-  }
+  if (user) return res.status(400).send("user is already register");
 
   //   user = new User({
   //     name: req.body.name,

@@ -4,7 +4,7 @@
 
 - sometime in **one api** call we may need to update **multiple collections**(tables) of mongoDB.
 - say for eg. In POST api call , if we are performing 2 save operation i.e. for change in one data we are updating 2 collection,
-- so if after one save operation some error occurs and 2nd operation is not able to complete then we will have different data saved in 2 diff collections. so we need to make this atomic where either both completes or non. we can do this using "transaction" in sql, and "two phase commit" technique in mongoDB.
+- so if after one save operation some error occurs and 2nd operation is not able to complete then we will have different data saved in 2 diff collections. so we need to make this is atomic i.e either both completes or non. we can do this using "transaction" in sql, and "two phase commit" technique in mongoDB.
 - we can use "fawn" in mongo for same purpose which internally use "two phase commit"
 
 ```js

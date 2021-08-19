@@ -1,4 +1,4 @@
-//create user model in models folder
+//create user model in models folder : models/user.js
 
 const Joi = require("joi"); //for body schema validation
 const mongoose = require("mongoose");
@@ -35,5 +35,6 @@ const validateUserSchema = (requestBody) => {
   });
   return schema.validate(requestBody);
 };
+
 exports.User = User;
 exports.validate = validateUserSchema;

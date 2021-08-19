@@ -28,6 +28,7 @@ const userSchema = new mongoose.Schema({
 
 //create a method to generate auth token, which can refrenced anywhere in program
 userSchema.methods.generateAuthToken = function () {
+  //we can't use arrow func here bcz for method which is part of object arrow function is not allowed
   const token = jwt.sign({ _id: this._id }, config.get("jwtPrivateKey"));
   return token;
 };

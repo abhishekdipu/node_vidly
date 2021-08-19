@@ -12,7 +12,7 @@ function auth(req, res, next) {
   try {
     const decoded = jwt.verify(token, config.get("jwtPrivateKey")); //it'll decode and return the payload if token is correct otherwise it'll return exception
     req.user = decoded; //add 'user' property to req object and set it equal to our payload i.e. {_id : user._id)
-    // so in route handlrs we will be ale to access payload as user property eg. user._id
+    // so in route handlrs we will be able to access payload as user property eg. user._id
     next();
   } catch (ex) {
     res.status(400).send("invalid token");

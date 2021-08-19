@@ -4,7 +4,7 @@
         - some popular options for this: Heroku, GCP, AWS, Azure
 
     2. Docker : it's good to use, if you want more control over your deployment, if you want to deploy on you own node servers.
-        - with docker you can create image of your application and simply deploy that image to any ccomputer that you want.
+        - with docker you can create image of your application and simply deploy that image to any computer that you want.
 
 ### Deploying Node app to Heroku
 
@@ -24,8 +24,6 @@
   - install heroku cli :
     for mac: brew tap heroku/brew && brew install heroku
     for window: download installer
-
-  - login to heroku with cli : in terminal-> heroku login
 
   - prepare app for heroku :
 
@@ -48,21 +46,31 @@
 
     - create .gitignore file : put file/folder name which you want want to push on git
 
-    - in terminal:-> heroku create unique_name eg.
-      heroku create abhishekdipu-vidly
-      (unique_name is optional if not given then heroku will craete itself )
+  - login to heroku with cli : in terminal-> heroku login
+    (it'll open the browser for login)
 
-      - git push heroku master
+  - in terminal:-> heroku create unique_name eg.
+    heroku create abhishekdipu-vidly
+    (unique_name is optional if not given then heroku will craete itself )
 
-      - set environment varibales in heroku:
+    - git push heroku master
 
-        1. set jwtPrivateKey
-           heroku config:set vidly_jwtPrivateKey=1234
-        2. set NODE_ENV to production to inhance performance
-           heroku config:set NODE_ENV=production
+    - set environment varibales in heroku:
 
-        - NB: to see all env aribales set in heroku:
-          heroku config
+      1. to set jwtPrivateKey
+         heroku config:set vidly_jwtPrivateKey=1234
+      2. to set NODE_ENV to production to inhance performance
+         heroku config:set NODE_ENV=production
+
+      - NB: to see all env aribales set in heroku:
+        heroku config
 
 - important things about heroku cloud architecture
   - by default heroku give us 1 server called dyno
+heroku config:set fca_db=mongodb+srv://fca_user:fca123@cluster0.uesen.mongodb.net/fca?retryWrites=true&w=majority
+heroku config:set fca_jwtPrivateKey=12345
+heroku config:set NODE_ENV=production
+
+fca_db=mongodb+srv://fca_user:fca123@cluster0.uesen.mongodb.net/<>?retryWrites=true&w=majority
+fca_jwtPrivateKey=12345
+NODE_ENV=development

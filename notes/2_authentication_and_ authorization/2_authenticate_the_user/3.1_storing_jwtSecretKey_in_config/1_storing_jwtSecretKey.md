@@ -4,7 +4,7 @@
 const token = jwt.sign({ _id: user._id }, "jwtPrivateKey");
 ```
 
-- here we are store secret key directly in code which is not a good practice at all because it'll be visible to anyone who has access to oue source code.
+- here we are storing secret key directly in code which is not a good practice at all because it'll be visible to anyone who has access to oue source code.
 
 - we should store out secret key in config file. for that we should use a 3rd party config module.
 
